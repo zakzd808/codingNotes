@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang='eng'>
+<head>
+    <meta charset="utf-8" />
+    <title> textInput</title>
+<!--    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">-->
+        <link rel="stylesheet" href="styles2.css">
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+               <div class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="brand">
+                    <div>ZACHARY DENZER</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1>Where is the ISS?</h1>
+    New Interval Time: <input id="timer" value="1"><br>
+    <button onclick="stopTimer();">Stop</button>
+    <button onclick="startTimer();">Start</button>
+    <button onclick="resetTimer();">Reset</button>
+
+    <!-- <button id="reset">Reset</button>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+    <hr>
+    <div id="logger"></div> -->
+
+    <p>
+        latitude: <span id='lat'></span><br />
+        longitude: <span id='lon'></span>
+    </p>
+
+    <script>
+
+        function Timer(fn, t) {
+            var timerObj = setInterval(fn, t);
+
+            this.stop = function() {
+                if (timerObj) {
+                    clearInterval(timerObj);
+                    timerObj = null;
+                }
+                return this;
+            }
+
+            this.start = function() {
+                if (!timerObj) {
+                    this.stop();
+                    timerObj = setInterval(fn, t);
+                }
+                return this;
+            }
+            
+            this.reset = function(newT = t) {
+                t = newT;
+                return this.stop().start();
+            }
+        }
+
+
+
+        // const intervalID = window.setInterval(getISS, 1500);
+
+        const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
+        
+        const timer = new Timer(async function getISS() {
+            const response = await fetch(api_url);
+            const data = await response.json();
+            const { latitude, longitude, footprint } = data;
+            console.log(latitude);
+            console.log(longitude);
+            console.log(footprint);
+
+            document.getElementById('lat').textContent = latitude;
+            document.getElementById('lon').textContent = longitude;
+        }, 1000);
+
+        function stopTimer() {
+        timer.stop();
+        }
+
+        function startTimer() {
+        timer.start();
+        }
+
+        function resetTimer() {
+            var newTime = document.getElementById("timer").value * 1000;
+            if (newTime) {
+                timer.reset(newTime);
+            }
+        }   
+    
+        // getISS();    
+    
+    </script>
+
+
+</body>
+</html>

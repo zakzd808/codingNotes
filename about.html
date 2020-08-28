@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+               <div class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="brand">
+                    <div>ZACHARY DENZER</div>
+                </div>
+            </div>
+        </div>
+
+        <dic class="content-wrapper">
+            <div class="two-column-wrapper">
+                <div class="profile-image-wrapper">
+                    <img src="images/portfolio1.jpg">
+                </div>
+
+                <div class="profile-content-wrapper">
+                    <h1>Thanks for visiting</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo aliquam sint assumenda quasi iusto vel! Quos deleniti totam necessitatibus sed, maiores corporis ad. Ipsam, cumque?</p>
+                </div>
+            </div>
+    </div>
+</body>
+<script>
+    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper');
+    
+    portfolioItems.forEach(portfolioItem => {
+        portfolioItem.addEventListener("mouseover", () => {
+           console.log(portfolioItem.childNodes[1].classList);
+           portfolioItem.childNodes[1].classList.add('img-darken');
+        })
+    })
+
+    portfolioItems.forEach(portfolioItem => {
+        portfolioItem.addEventListener("mouseout", () => {
+           console.log(portfolioItem.childNodes[1].classList);
+           portfolioItem.childNodes[1].classList.remove('img-darken');
+        })
+    })
+</script>
+</html>

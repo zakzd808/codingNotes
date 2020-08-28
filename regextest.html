@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> textInput</title>
+<!--    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">-->
+        <link rel="stylesheet" href="styles2.css">
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+               <div class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="brand">
+                    <div>ZACHARY DENZER</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper-textInput">
+            <h2>Type your text here</h2>
+        </div>
+
+        <div class="content-wrapper-textInput">
+        <textarea id = "mainText" rows = "20" cols = "100" placeholder = "Type text here"></textarea>
+        </div>
+
+        <div class="content-wrapper-textInput">
+            <h2>Type regex here</h2>
+        </div>
+
+        <div class="content-wrapper-textInput">
+            <textarea id = "regexText" rows = "5" cols = "100" placeholder = "Type regex here"></textarea>
+        </div>
+
+        <div class="content-wrapper-textInput">
+        <button onclick="getValue()" id = "btn1" cols = "50">Click me</button>
+        </div>
+        
+        <div class="content-wrapper-textInput">
+        <p id = "outputText"></p>
+        </div>
+    
+
+            <script>
+                function getValue() {
+                let regex = new RegExp(document.getElementById("regexText").value, 'g');
+                let text = document.getElementById("mainText").value;
+                let output = document.getElementById('outputText');
+                let regexOutput = regex.exec(text);
+
+                output.innerHTML = regexOutput;
+                }
+             </script>
+        
+    </div>
+
+</body>
+<script>
+    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper');
+    
+    portfolioItems.forEach(portfolioItem => {
+        portfolioItem.addEventListener("mouseover", () => {
+           console.log(portfolioItem.childNodes[1].classList);
+           portfolioItem.childNodes[1].classList.add('img-darken');
+        })
+    })
+
+    portfolioItems.forEach(portfolioItem => {
+        portfolioItem.addEventListener("mouseout", () => {
+           console.log(portfolioItem.childNodes[1].classList);
+           portfolioItem.childNodes[1].classList.remove('img-darken');
+        })
+    })
+</script>
+</html>
+
+
+
+8/12/20
+
+
+
+let str = 
+
+`<entry>
+<ent_seq>1000490</ent_seq>
+<k_ele>
+<keb>甘子</keb>
+</k_ele>
+<k_ele>
+<keb>天魚</keb>
+</k_ele>
+<k_ele>
+<keb>雨子</keb>
+</k_ele>
+<r_ele>
+<reb>あまご</reb>
+</r_ele>
+<r_ele>
+<reb>アマゴ</reb>
+<re_nokanji/>
+</r_ele>
+<sense>
+<pos>&n;</pos>
+<xref>皐月鱒</xref>
+<misc>&uk;</misc>
+<gloss>land-locked variety of red-spotted masu trout (Oncorhynchus masou ishikawae)</gloss>
+<gloss>amago</gloss>
+</sense>
+<sense>
+<gloss xml:lang="ger">Amago</gloss>
+<gloss xml:lang="ger">Oncorhynchus rhodurus</gloss>
+</sense>
+</entry>
+<entry>
+<ent_seq>1000500</ent_seq>
+<r_ele>
+<reb>あやす</reb>
+</r_ele>
+<sense>
+<pos>&v5s;</pos>
+<pos>&vt;</pos>
+<gloss>to cuddle</gloss>
+<gloss>to comfort</gloss>
+<gloss>to rock</gloss>
+<gloss>to soothe</gloss>
+<gloss>to dandle</gloss>
+<gloss>to humor</gloss>
+<gloss>to humour</gloss>
+<gloss>to lull</gloss>
+</sense>
+<sense>
+<gloss xml:lang="dut">sussen</gloss>
+<gloss xml:lang="dut">stillen</gloss>
+<gloss xml:lang="dut">z'n zin geven</gloss>
+<gloss xml:lang="dut">zoet houden</gloss>
+<gloss xml:lang="dut">{膝の上で} op z'n knie laten rijden</gloss>
+</sense>
+<sense>
+<gloss xml:lang="dut">vertroetelen</gloss>
+<gloss xml:lang="dut">troetelen</gloss>
+<gloss xml:lang="dut">liefkozen</gloss>
+<gloss xml:lang="dut">koesteren</gloss>
+<gloss xml:lang="dut">toefelen</gloss>
+<gloss xml:lang="dut">in de watten leggen</gloss>
+</sense>
+<sense>
+<gloss xml:lang="dut">{血</gloss>
+<gloss xml:lang="dut">汗を} plengen</gloss>
+</sense>
+<sense>
+<gloss xml:lang="dut">{果実を} afwerpen</gloss>
+<gloss xml:lang="dut">laten afvallen</gloss>
+</sense>
+<sense>
+<gloss xml:lang="ger">beschwichtigen</gloss>
+<gloss xml:lang="ger">beruhigen</gloss>
+<gloss xml:lang="ger">hätscheln</gloss>
+<gloss xml:lang="ger">liebkosen</gloss>
+</sense>
+<sense>
+<gloss xml:lang="ger">trösten</gloss>
+<gloss xml:lang="ger">bei Laune halten</gloss>
+</sense>
+<sense>
+<gloss xml:lang="rus">нянчить, развлекать (ребёнка)</gloss>
+</sense>
+<sense>
+<gloss xml:lang="spa">mecer</gloss>
+</sense>
+</entry>
+<entry>
+<ent_seq>1025020</ent_seq>
+<k_ele>
+<keb>ウーロン茶</keb>
+</k_ele>
+<k_ele>
+<keb>烏竜茶</keb>
+</k_ele>
+<k_ele>
+<keb>烏龍茶</keb>
+</k_ele>
+<k_ele>
+<keb>鳥龍茶</keb>
+<ke_inf>&iK;</ke_inf>
+</k_ele>
+<k_ele>
+<keb>鳥竜茶</keb>
+<ke_inf>&iK;</ke_inf>
+</k_ele>
+<r_ele>
+<reb>ウーロンちゃ</reb>
+</r_ele>
+<r_ele>
+<reb>ウーロンチャ</reb>
+<re_nokanji/>
+</r_ele>
+<sense>
+<pos>&n;</pos>
+<gloss>oolong tea</gloss>
+</sense>
+<sense>
+<gloss xml:lang="ger">Oolongtee (halb fermentierter Tee)</gloss>
+</sense>
+<sense>
+<gloss xml:lang="rus">чай сорта улон</gloss>
+</sense>
+<sense>
+<gloss xml:lang="spa">"uron-cha" (té de Oolong)</gloss>
+</sense>
+</entry>
+<entry>
+<ent_seq>1206730</ent_seq>
+<k_ele>
+<keb>学校</keb>
+<ke_pri>ichi1</ke_pri>
+<ke_pri>news1</ke_pri>
+<ke_pri>nf01</ke_pri>
+</k_ele>
+<k_ele>
+<keb>學校</keb>
+<ke_inf>&oK;</ke_inf>
+</k_ele>
+<r_ele>
+<reb>がっこう</reb>
+<re_pri>ichi1</re_pri>
+<re_pri>news1</re_pri>
+<re_pri>nf01</re_pri>
+</r_ele>
+<sense>
+<pos>&n;</pos>
+<gloss>school</gloss>
+</sense>
+<sense>
+<gloss xml:lang="dut">school</gloss>
+<gloss xml:lang="dut">{oneig.} hogeschool</gloss>
+<gloss xml:lang="dut">universiteit</gloss>
+<gloss xml:lang="dut">academie</gloss>
+<gloss xml:lang="dut">instituut</gloss>
+</sense>
+<sense>
+<gloss xml:lang="fre">école</gloss>
+</sense>
+<sense>
+<gloss xml:lang="ger">Schule</gloss>
+<gloss xml:lang="ger">Lehranstalt</gloss>
+<gloss xml:lang="ger">Bildungseinrichtung</gloss>
+<gloss xml:lang="ger">Akademie</gloss>
+<gloss xml:lang="ger">Seminar</gloss>
+</sense>
+<sense>
+<gloss xml:lang="hun">együtt úszó halraj</gloss>
+<gloss xml:lang="hun">fakultás</gloss>
+<gloss xml:lang="hun">iskola</gloss>
+<gloss xml:lang="hun">iskolaépület</gloss>
+<gloss xml:lang="hun">iskolaépületek</gloss>
+<gloss xml:lang="hun">iskolai oktatás</gloss>
+<gloss xml:lang="hun">tanterem</gloss>
+<gloss xml:lang="hun">vizsgáztató- és előadóterem</gloss>
+</sense>
+<sense>
+<gloss xml:lang="rus">1) школа, училище; учебное заведение</gloss>
+<gloss xml:lang="rus">2) (перен.) занятия (в учебном заведении)</gloss>
+</sense>
+<sense>
+<gloss xml:lang="slv">šola</gloss>
+</sense>
+<sense>
+<gloss xml:lang="spa">escuela</gloss>
+</sense>
+<sense>
+<gloss xml:lang="swe">skola</gloss>
+<gloss xml:lang="swe">plugg</gloss>
+</sense>
+</entry>`;
+
+let strNoLineBreaks = str.split("\n").join("");
+let regex = /<entry>.*?<keb>([\u4e00-\u9faf]+)<\/keb>.*?<reb>([\u3040-\u309f]+).*?<\/entry>/g;
+let regexed = strNoLineBreaks.match(regex);
+console.log(regexed)
+
+// let arr = [];
+// while ( r = regex.exec(strNoLineBreaks)) 
+// arr.push({
+//   Kanji: r[1],
+//   Hiragana: r[2]});
+// console.log(arr)
+
+ // let regexed = regex.exec(strNoLineBreaks);
+// let regexed = strNoLineBreaks.match(regex);
+// console.log(regexed)
+// console.log(regexed.length)
+// while (r = regex.exec(strNoLineBreaks))
+// console.log(r);

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> textInput</title>
+<!--    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">-->
+        <link rel="stylesheet" href="styles2.css">
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+               <div class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="brand">
+                    <div>ZACHARY DENZER</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper-textInput">
+            <h2>Type your text here</h2>
+        </div>
+
+        <div class="content-wrapper-textInput">
+        <textarea id = "mainText" rows = "20" cols = "100" placeholder = "Type text here"></textarea>
+        </div>
+
+        <div class="content-wrapper-textInput">
+            <h2>Type regex here</h2>
+        </div>
+
+        <div class="content-wrapper-textInput">
+            <textarea id = "regexText" rows = "5" cols = "100" placeholder = "Type regex here"></textarea>
+        </div>
+
+        <div class="content-wrapper-textInput">
+        <button onclick="getValue()" id = "btn1" cols = "50">Click me</button>
+        </div>
+        
+        <div class="content-wrapper-textInput">
+        <p id = "outputText"></p>
+        </div>
+    
+
+            <script>
+                function getValue() {
+                let regex = new RegExp(document.getElementById("regexText").value, 'g');
+                let text = document.getElementById("mainText").value;
+                let output = document.getElementById('outputText');
+                let regexOutput = regex.exec(text);
+
+                output.innerHTML = regexOutput;
+                }
+             </script>
+        
+    </div>
+
+</body>
+<script>
+    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper');
+    
+    portfolioItems.forEach(portfolioItem => {
+        portfolioItem.addEventListener("mouseover", () => {
+           console.log(portfolioItem.childNodes[1].classList);
+           portfolioItem.childNodes[1].classList.add('img-darken');
+        })
+    })
+
+    portfolioItems.forEach(portfolioItem => {
+        portfolioItem.addEventListener("mouseout", () => {
+           console.log(portfolioItem.childNodes[1].classList);
+           portfolioItem.childNodes[1].classList.remove('img-darken');
+        })
+    })
+</script>
+</html>
