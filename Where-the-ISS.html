@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang='eng'>
+
 <head>
+    <!-- // Just want to see if this adds// -->
     <meta charset="utf-8" />
     <title> textInput</title>
-<!--    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">-->
-        <link rel="stylesheet" href="styles2.css">
+    <!--    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">-->
+    <link rel="stylesheet" href="styles2.css">
     </script>
 </head>
+
 <body>
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
-               <div class="nav-link-wrapper">
+                <div class="nav-link-wrapper">
                     <a href="index.html">Home</a>
                 </div>
 
@@ -46,11 +49,10 @@
     </p>
 
     <script>
-
         function Timer(fn, t) {
             var timerObj = setInterval(fn, t);
 
-            this.stop = function() {
+            this.stop = function () {
                 if (timerObj) {
                     clearInterval(timerObj);
                     timerObj = null;
@@ -58,15 +60,15 @@
                 return this;
             }
 
-            this.start = function() {
+            this.start = function () {
                 if (!timerObj) {
                     this.stop();
                     timerObj = setInterval(fn, t);
                 }
                 return this;
             }
-            
-            this.reset = function(newT = t) {
+
+            this.reset = function (newT = t) {
                 t = newT;
                 return this.stop().start();
             }
@@ -77,11 +79,15 @@
         // const intervalID = window.setInterval(getISS, 1500);
 
         const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
-        
+
         const timer = new Timer(async function getISS() {
             const response = await fetch(api_url);
             const data = await response.json();
-            const { latitude, longitude, footprint } = data;
+            const {
+                latitude,
+                longitude,
+                footprint
+            } = data;
             console.log(latitude);
             console.log(longitude);
             console.log(footprint);
@@ -91,11 +97,11 @@
         }, 1000);
 
         function stopTimer() {
-        timer.stop();
+            timer.stop();
         }
 
         function startTimer() {
-        timer.start();
+            timer.start();
         }
 
         function resetTimer() {
@@ -103,12 +109,12 @@
             if (newTime) {
                 timer.reset(newTime);
             }
-        }   
-    
+        }
+
         // getISS();    
-    
     </script>
 
 
 </body>
+
 </html>
